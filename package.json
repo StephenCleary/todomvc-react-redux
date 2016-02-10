@@ -1,6 +1,10 @@
 {
+  "scripts": {
+    "build": "node_modules/.bin/webpack"
+  },
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.5.0",
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.0"
   },
