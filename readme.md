@@ -27,6 +27,8 @@ This app is built using the set of React best practices that I have found most u
 - [Flux standard actions](https://github.com/acdlite/flux-standard-action), utilizing the [redux actions library](https://github.com/acdlite/redux-actions).
 - Strict adherence to immutability. I do not use an immutability library to enforce this, but I do use [a library that detects changes](https://github.com/leoasis/redux-immutable-state-invariant). Note that in a real-world app, this library would only be used during development and not in production.
 
+In addition, this app is intended to show off the development environment of React/Redux. As such, it includes sourcemaps and debugging tools. Source code comments indicate where the code would need to be changed for a real production build. 
+
 ## Credit
 
 Created by [Stephen Cleary](http://stephencleary.com)
