@@ -9,7 +9,17 @@ module.exports = {
 				test: /\.jsx$/,
 				loader: 'babel-loader'
 			}
+		],
+		preLoaders: [
+			{
+				test: /\.jsx$/,
+				loader: 'eslint-loader',
+				exclude: /node_modules/
+			}
 		]
 	},
-	devtool: 'source-map'
+	devtool: 'inline-source-map',
+	eslint: {
+		configFile: './.eslintrc'
+	}
 };

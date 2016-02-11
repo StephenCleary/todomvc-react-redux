@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "build": "node_modules/.bin/webpack"
+    "build": "node_modules/.bin/webpack",
+    "watch": "node_modules/.bin/webpack --watch",
+    "serve": "node_modules/.bin/http-server -o"
   },
   "private": true,
   "dependencies": {
@@ -16,7 +18,9 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "eslint": "^1.10.3",
+    "eslint-loader": "^1.2.1",
     "eslint-plugin-react": "^3.16.1",
+    "http-server": "^0.8.5",
     "webpack": "^1.12.13"
   }
 }
