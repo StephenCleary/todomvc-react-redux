@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function Main() {
     return (
@@ -58,4 +60,4 @@ function Main() {
 }
 
 // Once the DOM has loaded, render our app.
-window.onload = () => render(Main(), document.getElementById('app'));
+window.onload = () => render(<Provider store={store}><Main/></Provider>, document.getElementById('app'));
