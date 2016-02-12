@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import TodoActions from '../actions/todoActions';
 
 function Header({dispatch}) {
@@ -10,8 +11,4 @@ function Header({dispatch}) {
     );
 }
 
-Header.propTypes = {
-	dispatch: React.PropTypes.func.isRequired
-};
-
-export default Header;
+export default connect()(Header);

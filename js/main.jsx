@@ -1,23 +1,22 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 import DevTools from './devTools';
 import Header from './components/header';
 import Todos from './components/todos';
 import Footer from './components/footer';
 
-function MainImpl({dispatch}) {
+function Main() {
     return (
         <section className="todoapp">
-			<Header dispatch={dispatch}/>
+			<Header/>
 			<Todos/>
 			<Footer/>
         </section>
     );
 }
-const Main = connect()(MainImpl);
 
 // Once the DOM has loaded, render our app.
 // NOTE FOR PRODUCTION: DevTools should not be used in production apps!
