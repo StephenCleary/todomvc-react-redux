@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './js/main.jsx',
+	entry: './js/todoApp.jsx',
 	output: {
 		filename: './js/app.js'
 	},

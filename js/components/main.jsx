@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Todos() {
+export default function Main() {
     // This section should be hidden by default and shown when there are todos
     return (
         <section className="main">

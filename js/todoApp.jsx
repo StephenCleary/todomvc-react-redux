@@ -5,15 +5,15 @@ import { Provider } from 'react-redux';
 import store from './store';
 import DevTools from './devTools';
 import Header from './components/header';
-import Todos from './components/todos';
+import Main from './components/main';
 import Footer from './components/footer';
 
-function Main() {
+function TodoApp() {
     return (
         <section className="todoapp">
-			<Header/>
-			<Todos/>
-			<Footer/>
+            <Header/>
+            <Main/>
+            <Footer/>
         </section>
     );
 }
@@ -24,7 +24,7 @@ window.onload = () => {
     const root = (
         <Provider store={store}>
             <div>
-                <Main/>
+                <TodoApp/>
                 <DevTools/>
             </div>
         </Provider>
