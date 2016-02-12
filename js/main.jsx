@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
+import DevTools from './devTools';
 
 function Main() {
     return (
@@ -60,4 +61,15 @@ function Main() {
 }
 
 // Once the DOM has loaded, render our app.
-window.onload = () => render(<Provider store={store}><Main/></Provider>, document.getElementById('app'));
+// NOTE FOR PRODUCTION: DevTools should not be used in production apps!
+window.onload = () => {
+    const root = (
+        <Provider store={store}>
+            <div>
+                <Main/>
+                <DevTools/>
+            </div>
+        </Provider>
+    );
+    render(root, document.getElementById('app'));
+}

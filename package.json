@@ -2,7 +2,7 @@
   "scripts": {
     "build": "node_modules/.bin/webpack",
     "watch": "node_modules/.bin/webpack --watch",
-    "serve": "node_modules/.bin/http-server -o"
+    "serve": "node_modules/.bin/http-server -o -c-1"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,9 @@
     "eslint-loader": "^1.2.1",
     "eslint-plugin-react": "^3.16.1",
     "http-server": "^0.8.5",
+    "redux-devtools": "^3.1.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.4",
     "webpack": "^1.12.13"
   }
 }
