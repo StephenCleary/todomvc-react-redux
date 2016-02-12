@@ -1,16 +1,17 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import store from './store';
 import DevTools from './devTools';
+import TodoActions from './actions/todoActions';
 
-function Main() {
+function MainImpl({dispatch}) {
     return (
         <section className="todoapp">
             <header className="header">
                 <h1>todos</h1>
-                <input className="new-todo" placeholder="What needs to be done?" autoFocus/>
+                <input className="new-todo" placeholder="What needs to be done?" autoFocus onBlur={e => dispatch(TodoActions.add(e.target.value))}/>
             </header>
             {/* This section should be hidden by default and shown when there are todos */}
             <section className="main">
@@ -59,6 +60,7 @@ function Main() {
         </section>
     );
 }
+const Main = connect()(MainImpl);
 
 // Once the DOM has loaded, render our app.
 // NOTE FOR PRODUCTION: DevTools should not be used in production apps!
