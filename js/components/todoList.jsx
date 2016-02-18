@@ -1,26 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import TodoItem from './todoItem';
 
-export default function TodoList() {
+function TodoList({todos}) {
     return (
         <ul className="todo-list">
-            {/* These are here just to show the structure of the list items */}
-            {/* List items should get the class `editing` when editing and `completed` when marked as completed */}
-            <li className="completed">
-                <div className="view">
-                    <input className="toggle" type="checkbox" checked/>
-                    <label>Taste JavaScript</label>
-                    <button className="destroy"/>
-                </div>
-                <input className="edit" value="Create a TodoMVC template"/>
-            </li>
-            <li>
-                <div className="view">
-                    <input className="toggle" type="checkbox"/>
-                    <label>Buy a unicorn</label>
-                    <button className="destroy"/>
-                </div>
-                <input className="edit" value="Rule the web"/>
-            </li>
+			{todos.map((item, index) => <TodoItem key={index} item={item}/>)}
         </ul>
     );
 }
+
+TodoList.propTypes = {
+	todos: React.PropTypes.arrayOf(
+		React.PropTypes.shape({
+			completed: React.PropTypes.bool.isRequired,
+			text: React.PropTypes.string.isRequired
+		})
+	).isRequired
+};
+
+export default connect(x => ({ todos: x }))(TodoList);
